@@ -1,0 +1,13 @@
+<ion-view view-title="Users">
+  <ion-content>
+    <ion-list>
+      <ion-item href="#chat/{{user.Id}}" ng-repeat="user in users">
+        <div>
+          {{user.Name}}
+          <div ng-if="isMe(user.Id)">(me)</div>
+          <span ng-if="!isMe(user.Id) && getUndreadedMessages(user.Id) > 0" class="badge badge-positive">{{ getUndreadedMessages(user.Id) }}</span>
+        </div>
+    </ion-list>
+      </ion-item>
+  </ion-content>
+</ion-view>

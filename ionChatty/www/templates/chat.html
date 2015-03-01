@@ -1,0 +1,18 @@
+<ion-view title="Chat" class="messaging-view">
+      <ion-content delegate-handle="content" class="content-stable">
+        <div ng-repeat="message in messages"
+             ng-class="{myMessages: message.userId == userId, messages: message.userId != userId}">
+          <div class="message">
+            <span>{{ message.text }}</span>
+          </div>
+        </div>
+      </ion-content>
+      <ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
+        <label class="item-input-wrapper">
+          <input type="text" placeholder="Bitte Nachricht eintippen..." on-return="sendMessage();" ng-model="message" />
+        </label>
+        <button class="button button-dark" ng-click="sendMessage()">
+          Send
+        </button>
+      </ion-footer-bar>
+  </ion-view>
