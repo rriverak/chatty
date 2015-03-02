@@ -8,7 +8,7 @@ var users = [];
 var userSockets = {};
 
 http.listen(81, function(){
-  console.log('listening on *:3000');
+  console.log('WebServer listening on *:81');
 });
 
 app.use(express.static(__dirname + '/ionChatty/www/'));
