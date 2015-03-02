@@ -26,7 +26,6 @@ io.on('connection', function(client){
 
     userSockets[client.id] = client;
     users.push(user);
-    //console.log(io.sockets);
     io.sockets.emit("update", users);
   });
 
